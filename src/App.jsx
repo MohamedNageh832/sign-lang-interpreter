@@ -20,11 +20,8 @@ function App() {
 
   // Main function
   const runCoco = async () => {
-    // 3. TODO - Load network
-    // e.g. const net = await cocossd.load();
-    // https://tensorflowjsrealtimemodel.s3.au-syd.cloud-object-storage.appdomain.cloud/model.json
     try {
-      const net = await tf.loadGraphModel("model.json");
+      const net = await tf.loadGraphModel("/model.json");
       console.log("Model loaded successfully.");
 
       setInterval(() => {
