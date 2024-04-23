@@ -69,14 +69,20 @@ function App() {
       const ctx = canvasRef.current.getContext("2d");
 
       requestAnimationFrame(() => {
-        const text = getText(classes[0]);
+        // setHistory((prev) => {
+        //   if (text !== prev[prev.length - 1]) return [...prev, text];
+        //   else return prev;
+        // });
 
-        setHistory((prev) => {
-          if (text !== prev[prev.length - 1]) return [...prev, text];
-          else return prev;
-        });
-
-        drawRect(boxes[0], text, scores[0], 0.8, videoWidth, videoHeight, ctx);
+        drawRect(
+          boxes[0],
+          classes[0],
+          scores[0],
+          0.8,
+          videoWidth,
+          videoHeight,
+          ctx
+        );
       });
 
       tf.dispose(img);
